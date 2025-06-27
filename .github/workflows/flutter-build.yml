@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-flutter build apk --release
+name: Build Kagapay APK
     steps:
       - uses: actions/checkout@v3
 
