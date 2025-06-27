@@ -36,3 +36,4 @@ jobs:
         with:
           name: Kagapay-apk
           path: build/app/outputs/flutter-apk/app-release.apk
+          
