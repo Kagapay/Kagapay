@@ -43,7 +43,8 @@ jobs:
           name: kagapay-apk
           path: build/app/outputs/flutter-apk/app-release.apk
 / .github/workflows/flutter-build.yml
-/ .github/workflows/flutter-build.yml#L45
+.geithub/build/app/outputs/flutter-apk/app-release.apk
+
 git remote add origin https://github.com/Kagapay/Kagapay.git
 git add .
 git commit -m "Initial Kagapay app with GitHub Actions"
