@@ -1,5 +1,18 @@
-git init
-git remote add origin https://github.com/Kagapay/Kagapay.git
-git add .
-git commit -m "Upload working Flutter project"
-git push -u origin main --force
+name: Build Kagapay APK
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  actions: read
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
