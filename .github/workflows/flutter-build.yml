@@ -46,7 +46,11 @@ jobs:
   name: kagapay-apk
   path: build/app/outputs/flutter-apk/app-release.apk
 
-.geithub/build/app/outputs/flutter-apk/app-release.apk
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kagapay-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
 
 git remote add origin https://github.com/Kagapay/Kagapay.git
 git add .
