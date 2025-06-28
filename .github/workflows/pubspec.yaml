@@ -1,6 +1,5 @@
 name: kagapay
-description: A new Flutter project for Kagapay app.
-publish_to: 'none'
+description: A multi-wallet app with currency exchange.
 version: 1.0.0+1
 
 environment:
@@ -10,10 +9,3 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-
-flutter:
-  uses-material-design: true
