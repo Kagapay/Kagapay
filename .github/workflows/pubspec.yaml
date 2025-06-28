@@ -1,11 +1,44 @@
-name: kagapay
-description: A multi-wallet app with currency exchange.
-version: 1.0.0+1
+name: Build Kagapay APK
 
-environment:
-  sdk: ">=2.17.0 <3.0.0"
+on:
+  push:
+    branches: [ main ]
 
-dependencies:
-  flutter:
-    sdk: flutter
-  cupertino_icons: ^1.0.2
+permissions:
+  contents: read
+  actions: read
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.19.6'
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Accept Android Licenses
+        run: yes | flutter doctor --android-licenses
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build APK
+        run: flutter build apk --release
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kagapay-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
