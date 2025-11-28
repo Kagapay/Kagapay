@@ -1,4 +1,4 @@
-name: Deploy Kagapay Pages
+name: Deploy Kagapay Website
 on:
   push:
     branches: [ "main" ]
@@ -22,7 +22,6 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: "."
-
   deploy:
     runs-on: ubuntu-latest
     needs: build
