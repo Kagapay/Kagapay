@@ -1,0 +1,1 @@
+export function send(amount){return {status:'sent', amount}}

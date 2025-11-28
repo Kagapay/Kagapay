@@ -1,0 +1,1 @@
+export function getBalance(){return 100;}
